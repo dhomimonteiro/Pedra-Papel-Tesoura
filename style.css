@@ -58,12 +58,12 @@ p{
     transition: .1s;
 }
 
-.pc-side .cards img:hover{
-    /*others*/
+/* .pc-side .cards img:hover{
+    others
     transform: translateY(10px);
     transition: .1s;
-}
-.player-side .cards img:hover{
+} */
+.hover:hover{
     /*others*/
     transform: translateY(-30px);
     transition: .1s;
