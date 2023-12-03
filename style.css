@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+* {
+    /* box-model */
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* typography */
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    /* box-model */
+    height: 100vh;
+    /*background*/
+    background-image: url(./imgs/ekaterina-novitskaya-KugwNl9jX1Q-unsplash.jpg);
+    background-position: center;
+    background-size: cover;
+    background-color: #000;
+}
+
+.container{
+    /* box-model */
+    height: 100%;
+    /* layout */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.player-side, .pc-side {
+    /*box-model*/
+    width: 100vw;
+}
+.cards {
+    /*box-model*/
+    width: 100%;
+    /*layout*/
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 70px;
+}
+p{
+    /*typography*/
+    text-align: center;
+    font-size: 25px;
+    text-transform: uppercase;
+    color: rgb(202, 131, 90);
+}
+.cards img{
+    /*box-model*/
+    height: 300px;
+    /*layout*/
+    position: relative;
+
+    /*others*/
+    cursor: pointer;
+    transition: .1s;
+}
+
+.pc-side .cards img:hover{
+    /*others*/
+    transform: translateY(10px);
+    transition: .1s;
+}
+.player-side .cards img:hover{
+    /*others*/
+    transform: translateY(-30px);
+    transition: .1s;
+}
+
