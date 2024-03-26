@@ -16,7 +16,6 @@ body{
     background-image: url(./imgs/ekaterina-novitskaya-KugwNl9jX1Q-unsplash.jpg);
     background-position: center;
     background-size: cover;
-    background-color: #000;
 }
 
 .container{
@@ -27,7 +26,7 @@ body{
     flex-direction: column;
     justify-content: space-between;
 }
-.player-side, .pc-side {
+.player-side, .pc-side, .timer {
     /*box-model*/
     width: 100vw;
 }
@@ -40,13 +39,15 @@ body{
     justify-content: center;
     gap: 70px;
 }
-p{
+#timer{
     /*typography*/
     text-align: center;
     font-size: 25px;
+    width: 100%;
     text-transform: uppercase;
-    color: rgb(202, 131, 90);
+    color: rgb(240, 208, 182);
 }
+
 .cards img{
     /*box-model*/
     height: 300px;
@@ -54,18 +55,36 @@ p{
     position: relative;
 
     /*others*/
-    cursor: pointer;
     transition: .1s;
 }
 
-/* .pc-side .cards img:hover{
-    others
-    transform: translateY(10px);
-    transition: .1s;
-} */
+.pc-side{
+    position: relative;
+    height: 300px;
+    text-align: center;
+    transition: transform 0.8s;
+    
+}
+.pc-side pc-cards:hover{
+    transform: rotateY(180deg);
+}
+.cards-back, .cards-front{
+    position: absolute;
+    
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
 .hover:hover{
     /*others*/
+    cursor: pointer;
     transform: translateY(-30px);
     transition: .1s;
 }
-
+.userChoice{
+    /*layout*/
+    /* transform:  translateY(-250px)
+                translateX(170px) */
+    position: absolute;
+    top: 20px;
+}
