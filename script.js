@@ -37,13 +37,13 @@ const playerCards = document.getElementsByClassName("player-cards");
 // select the player-card clicked
 function selectedPlayerCard() {
     if (isCardSelected == false) {
-        this.style.top = "-30px"
         isCardSelected = true;
         playerCardValue = this.getAttribute('value')
         
         removeHoverEffect();
         activateTimer();
         useCard(this);
+        pcCard();
     }
 }
 
@@ -66,8 +66,19 @@ function activateTimer() {
 function useCard(card) {
     setTimeout(() => {
         card.classList += " userChoice"
-    }, 1000);
+    }, 11000);
 }
+
+function pcCard() {
+    setTimeout(() => {
+        let random = Math.floor(Math.random() * 3);
+        pcCards[0].style.position = "absolute";
+        pcCards[0].style.top = "100%";
+        pcCards[0].style.left = "25%";
+    }, 1000)
+}
+
+
 //remove hover effect when selecting a card
 function removeHoverEffect() {
     for (let i = 0; i < playerCards.length; i++) {
@@ -80,6 +91,7 @@ for (let i = 0; i < playerCards.length; i++) {
     playerCards[i].addEventListener("click", selectedPlayerCard)
 }
 
+//pc chooses its card
 function pcPicksCard() {
     cards = ['tesoura','papel','pedra'];
     let random = Math.floor(Math.random() * 3);
@@ -94,24 +106,24 @@ function compareCards() {
 
     } else if (pcCardValue === 'tesoura' && playerCardValue === 'pedra'){
         console.log('Player venceu!')
-        timerText.textContent = "Empate";
+        timerText.textContent = "Player venceu";
     }else if (pcCardValue === 'tesoura' && playerCardValue === 'papel'){
         console.log('PC venceu!')
-        timerText.textContent = "Empate";
+        timerText.textContent = "PC venceu";
     }else if (pcCardValue === 'pedra' && playerCardValue === 'tesoura'){
         console.log('PC venceu!')
-        timerText.textContent = "Empate";
+        timerText.textContent = "PC venceu";
     }else if (pcCardValue === 'pedra' && playerCardValue === 'papel'){
         console.log('Player venceu!')
-        timerText.textContent = "Empate";
+        timerText.textContent = "Player venceu";
     }else if (pcCardValue === 'papel' && playerCardValue === 'tesoura'){
         console.log('Player venceu!')
-        timerText.textContent = "Empate";
+        timerText.textContent = "Player venceu";
     }else if (pcCardValue === 'papel' && playerCardValue === 'pedra'){
         console.log('PC venceu!')
-        timerText.textContent = "Empate";
+        timerText.textContent = "PC venceu";    
     }else{
         console.log('teste pra ver se nd faltou')
-        timerText.textContent = "Empate";
+        timerText.textContent = "teste pra ver se nd faltou";
     }
 }

@@ -52,8 +52,6 @@ body{
     /*box-model*/
     height: 300px;
     /*layout*/
-    position: relative;
-
     /*others*/
     transition: .1s;
 }
@@ -86,5 +84,7 @@ body{
     /* transform:  translateY(-250px)
                 translateX(170px) */
     position: absolute;
-    top: 20px;
+    bottom: 33%;
+    right: 25%;
+    transition: .1s;
 }
